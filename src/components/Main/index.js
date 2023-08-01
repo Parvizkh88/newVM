@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { FaCircle } from 'react-icons/fa';
+
 
 
 const Main = () => {
@@ -12,7 +14,32 @@ const Main = () => {
         'Finalize',
     ];
 
+// const stepperHandle=()=>{
+//     switch (currentStep) {
+//         case 0:
+//             axios("https://855b3ea4-1afc-42b3-9811-a8d3d4430561.mock.pstmn.io/locations")
+//                 .then((res) => setDataList(res.data.locations))
+//                 .catch((error) => console.log(error))
+//             return 
+//         case 1:
+//             axios("https://855b3ea4-1afc-42b3-9811-a8d3d4430561.mock.pstmn.io/types")
+//                 .then((res) => setDataList(res.data.types))
+//                 .catch((error) => console.log(error))
+//             break;
+
+//         default:
+//             break;
+//     }
+// }
+
     const [currentStep, setCurrentStep] = useState(0);
+    const [dataList, setDataList] = useState([]);
+    useEffect(() => {
+       
+    }, [currentStep])
+
+
+
 
     const handleNext = () => {
         if (currentStep < steps.length - 1) {
@@ -27,9 +54,9 @@ const Main = () => {
     };
 
     return (
-        <div style={{ backgroundColor: '#ACCEF7', width: '85%', padding: '20px', height: 'calc(100vh - 60px)' }}>
+        <>
             {/* Pagination */}
-            <div style={{ display: 'flex', marginBottom: '30px', justifyContent: 'space-between', alignItems: 'center' }}>
+            <section style={{ display: 'flex', marginBottom: '30px', justifyContent: 'space-between', alignItems: 'center' }}>
                 {steps.map((step, index) => (
                     <React.Fragment key={index}>
                         <div style={{ textAlign: 'center', cursor: 'pointer' }} onClick={() => setCurrentStep(index)}>
@@ -39,9 +66,11 @@ const Main = () => {
                         {index < steps.length - 1 && <div style={{ flexGrow: '1', borderBottom: '1px solid blue', height: '1px' }} />}
                     </React.Fragment>
                 ))}
-            </div>
+            </section>
             {/* Content */}
             <h3>{steps[currentStep]}</h3>
+
+
             {/* Buttons */}
             <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'space-between' }}>
                 {currentStep > 0 ? (
@@ -67,7 +96,7 @@ const Main = () => {
                     </div>
                 )}
             </div>
-        </div>
+        </>
     );
 };
 
