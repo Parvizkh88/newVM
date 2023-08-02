@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { Card } from 'react-bootstrap';
+import React, { useState } from "react";
+import { Card } from "react-bootstrap";
 
-const LocationCard = ({id, flag, city }) => {
+const LocationCard = ({ id, flag, city }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div id={id}>
@@ -11,12 +11,22 @@ const LocationCard = ({id, flag, city }) => {
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: "white",
-          border: isHovered ? "1px solid blue" : "none",
+          border: isHovered ? "4px solid blue" : "none",
+          paddingTop: "25px",
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <Card.Img variant="top" src={flag} />
+        <Card.Img
+          variant="top"
+          src={flag}
+          style={{
+            height: "100px",
+            width: "100px",
+            margin: "0px",
+            borderRadius: "50%",
+          }}
+        />
         <Card.Body>
           <Card.Title style={{ fontWeight: "bold" }}>{city}</Card.Title>
         </Card.Body>
@@ -25,4 +35,4 @@ const LocationCard = ({id, flag, city }) => {
   );
 };
 
-export default LocationCard
+export default LocationCard;

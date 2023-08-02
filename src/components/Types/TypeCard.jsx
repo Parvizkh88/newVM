@@ -1,13 +1,4 @@
-// import React from 'react'
-
-// const TypeCard = () => {
-//   return (
-//     <div>LocationCard</div>
-//   )
-// }
-
-// export default TypeCard;
-import{ useState } from "react";
+import { useState } from "react";
 import { Card, Button, DropdownButton, Dropdown } from "react-bootstrap";
 import { FaChevronDown } from "react-icons/fa"; // Importing dropdown arrow icon
 

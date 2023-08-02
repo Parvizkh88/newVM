@@ -3,10 +3,10 @@ import LocationCard from "./LocationCard";
 
 const Locations = ({ dataList }) => {
   return (
-    <section className="row row-cols-1 row-cols-md-3 gy-3 gx-4">
+    <section className="row row-cols-1 row-cols-md-4 gy-3 gx-4">
       {dataList.map((item) => (
-        <div className="col">
-          <LocationCard key={item.id} {...item} />
+        <div className="col" key={item.id}>
+          <LocationCard {...item} />
         </div>
       ))}
     </section>

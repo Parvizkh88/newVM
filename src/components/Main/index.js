@@ -48,13 +48,13 @@ const Main = () => {
                             <FaCircle
                                 size={25}
                                 style={{
-                                    border: index === currentStep ? '5px solid yellow' : '5px solid #8CC0DE',
-                                    backgroundColor: index === currentStep ? 'white' : '#A7EDE7',
-                                    padding: '3px',
+                                    border: index === currentStep ? '5px solid yellow' : '5px solid #bcdfeb',
+                                    backgroundColor: index === currentStep ? 'white' : '#00FFCA',
+                                    padding: '5px',
                                     borderRadius: '50%',
 
                                 }}
-                                color={index === currentStep ? 'white' : '#A7EDE7'}
+                                color={index === currentStep ? 'white' : '#00FFCA'}
                             />
 
 
