@@ -8,6 +8,8 @@ const RoutesMap = () => {
       <Route path="/" element={<Dashboard />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/instances" element={<Instances />} />
+      {/* <Route path="/instances/locations" element={<Instances />} />
+      <Route path="/instances/types" element={<Instances />} /> */}
     </Routes>
   );
 };

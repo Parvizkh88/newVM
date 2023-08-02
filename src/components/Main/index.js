@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { FaCircle } from 'react-icons/fa';
+import TypeCard from '../Types/TypeCard';
+import Stepper from './Stepper';
 
 
 
@@ -14,29 +16,10 @@ const Main = () => {
         'Finalize',
     ];
 
-// const stepperHandle=()=>{
-//     switch (currentStep) {
-//         case 0:
-//             axios("https://855b3ea4-1afc-42b3-9811-a8d3d4430561.mock.pstmn.io/locations")
-//                 .then((res) => setDataList(res.data.locations))
-//                 .catch((error) => console.log(error))
-//             return 
-//         case 1:
-//             axios("https://855b3ea4-1afc-42b3-9811-a8d3d4430561.mock.pstmn.io/types")
-//                 .then((res) => setDataList(res.data.types))
-//                 .catch((error) => console.log(error))
-//             break;
-
-//         default:
-//             break;
-//     }
-// }
+  
 
     const [currentStep, setCurrentStep] = useState(0);
-    const [dataList, setDataList] = useState([]);
-    useEffect(() => {
-       
-    }, [currentStep])
+   
 
 
 
@@ -69,7 +52,7 @@ const Main = () => {
             </section>
             {/* Content */}
             <h3>{steps[currentStep]}</h3>
-
+            <Stepper currentStep={currentStep}/>
 
             {/* Buttons */}
             <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'space-between' }}>
