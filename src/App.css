@@ -2,8 +2,8 @@
   text-align: center;
 }
 a:hover {
-  background-color: #213555;
-  color: white;
+  background-color: #0d6efd;
+  color: white !important;
 }
 
 a[href="/volume"]:hover {
@@ -11,9 +11,16 @@ a[href="/volume"]:hover {
   background-color: transparent;
 }
 
+button.sidebar-button:hover {
+  background-color: #0d6efd !important;
+  color: white !important;
+  border: none !important;
+}
+
 button:hover {
-  background-color: #213555;
+  background-color: #0d6efd;
   color: white;
+  border: none;
 }
 .Main-button {
   background-color: yellow;

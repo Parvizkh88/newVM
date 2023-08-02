@@ -16,10 +16,10 @@ const Main = () => {
         'Finalize',
     ];
 
-  
+
 
     const [currentStep, setCurrentStep] = useState(0);
-   
+
 
 
 
@@ -43,8 +43,22 @@ const Main = () => {
                 {steps.map((step, index) => (
                     <React.Fragment key={index}>
                         <div style={{ textAlign: 'center', cursor: 'pointer' }} onClick={() => setCurrentStep(index)}>
-                            <FaCircle size={15} color={index === currentStep ? 'yellow' : 'blue'} />
-                            <div style={{ fontSize: '14px', marginTop: '10px', color: index === currentStep ? 'yellow' : 'blue' }}>{step}</div>
+
+
+                            <FaCircle
+                                size={25}
+                                style={{
+                                    border: index === currentStep ? '5px solid yellow' : '5px solid #8CC0DE',
+                                    backgroundColor: index === currentStep ? 'white' : '#A7EDE7',
+                                    padding: '3px',
+                                    borderRadius: '50%',
+
+                                }}
+                                color={index === currentStep ? 'white' : '#A7EDE7'}
+                            />
+
+
+                            <div style={{ fontSize: '14px', marginTop: '10px', color: index === currentStep ? 'black' : 'gray', fontWeight: 'bold' }}>{step}</div>
                         </div>
                         {index < steps.length - 1 && <div style={{ flexGrow: '1', borderBottom: '1px solid blue', height: '1px' }} />}
                     </React.Fragment>
@@ -52,7 +66,7 @@ const Main = () => {
             </section>
             {/* Content */}
             <h3>{steps[currentStep]}</h3>
-            <Stepper currentStep={currentStep}/>
+            <Stepper currentStep={currentStep} />
 
             {/* Buttons */}
             <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'space-between' }}>

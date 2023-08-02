@@ -1,5 +1,8 @@
 import React from 'react';
-import { AiOutlineHome, AiOutlineCloud, AiOutlineCamera, AiOutlineKey, AiOutlineHdd, AiOutlineWifi, AiOutlineFileText, AiOutlineDollarCircle, AiOutlineCustomerService, AiOutlineQuestionCircle } from 'react-icons/ai';
+import { AiOutlineHome, AiOutlineCloud, AiOutlineCamera, AiOutlinePlusSquare, AiOutlineKey, AiOutlineHdd, AiOutlineWifi, AiOutlineFileText, AiOutlineDollarCircle, AiOutlineCustomerService, AiOutlineQuestionCircle } from 'react-icons/ai';
+import { MdOutlineKey } from "react-icons/md";
+import { FiHardDrive } from "react-icons/fi";
+import { IoHelpBuoyOutline } from "react-icons/io5";
 
 const Sidebar = () => {
     return (
@@ -14,7 +17,7 @@ const Sidebar = () => {
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                     <a href="/instances" style={{ color: '#213555', textDecoration: 'none', display: 'flex', alignItems: 'center', padding: '10px', borderRadius: '5px' }}>
-                        <AiOutlineCloud style={{ marginRight: '10px' }} />
+                        <AiOutlinePlusSquare style={{ marginRight: '10px' }} />
                         Instances
                     </a>
                 </div>
@@ -26,13 +29,13 @@ const Sidebar = () => {
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                     <a href="/sshkeys" style={{ color: '#213555', textDecoration: 'none', display: 'flex', alignItems: 'center', padding: '10px', borderRadius: '5px' }}>
-                        <AiOutlineKey style={{ marginRight: '10px' }} />
+                        <MdOutlineKey style={{ marginRight: '10px' }} />
                         SSH Keys
                     </a>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                     <a href="/volume" style={{ color: '#D8D9DA', textDecoration: 'none', display: 'flex', alignItems: 'center', padding: '10px', borderRadius: '5px' }}>
-                        <AiOutlineHdd style={{ marginRight: '10px' }} />
+                        <FiHardDrive style={{ marginRight: '10px' }} />
                         Volume
                     </a>
                 </div>
@@ -56,16 +59,16 @@ const Sidebar = () => {
             </div>
             {/* Third part */}
             <div style={{ padding: '20px' }}>
-                <button style={{ marginBottom: '15px', width: '100%', height: '40px', backgroundColor: 'white', color: '#213555', display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'none', borderRadius: '5px' }}>
+                <button className="sidebar-button" style={{ marginBottom: '15px', width: '100%', height: '40px', backgroundColor: 'white', color: '#213555', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid gray', borderRadius: '5px' }}>
                     <AiOutlineDollarCircle style={{ marginRight: '10px' }} />
                     Billing
                 </button>
-                <button style={{ marginBottom: '15px', width: '100%', height: '40px', backgroundColor: 'white', color: '#213555', display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'none', borderRadius: '5px' }}>
-                    <AiOutlineCustomerService style={{ marginRight: '10px' }} />
+                <button className="sidebar-button" style={{ marginBottom: '15px', width: '100%', height: '40px', backgroundColor: 'white', color: '#213555', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid gray', borderRadius: '5px' }}>
+                    <AiOutlineQuestionCircle style={{ marginRight: '10px' }} />
                     Support
                 </button>
-                <button style={{ marginBottom: '15px', width: '100%', height: '40px', backgroundColor: 'white', color: '#213555', display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'none', borderRadius: '5px' }}>
-                    <AiOutlineQuestionCircle style={{ marginRight: '10px' }} />
+                <button className="sidebar-button" style={{ marginBottom: '15px', width: '100%', height: '40px', backgroundColor: 'white', color: '#213555', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid gray', borderRadius: '5px' }}>
+                    <IoHelpBuoyOutline style={{ marginRight: '10px' }} />
                     Help
                 </button>
             </div>
