@@ -1,4 +1,5 @@
 import React from "react";
+
 import TypeCard from "./TypeCard";
 
 const Types = ({ dataList }) => {

@@ -1,11 +1,9 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+
 import { FaCircle } from 'react-icons/fa';
-import TypeCard from '../Types/TypeCard';
+
 import Stepper from './Stepper';
-
-
 
 const Main = () => {
     const steps = [
@@ -16,13 +14,7 @@ const Main = () => {
         'Finalize',
     ];
 
-
-
     const [currentStep, setCurrentStep] = useState(0);
-
-
-
-
 
     const handleNext = () => {
         if (currentStep < steps.length - 1) {
@@ -43,8 +35,6 @@ const Main = () => {
                 {steps.map((step, index) => (
                     <React.Fragment key={index}>
                         <div style={{ textAlign: 'center', cursor: 'pointer' }} onClick={() => setCurrentStep(index)}>
-
-
                             <FaCircle
                                 size={25}
                                 style={{
@@ -52,12 +42,9 @@ const Main = () => {
                                     backgroundColor: index === currentStep ? 'white' : '#00FFCA',
                                     padding: '5px',
                                     borderRadius: '50%',
-
                                 }}
                                 color={index === currentStep ? 'white' : '#00FFCA'}
                             />
-
-
                             <div style={{ fontSize: '14px', marginTop: '10px', color: index === currentStep ? 'black' : 'gray', fontWeight: 'bold' }}>{step}</div>
                         </div>
                         {index < steps.length - 1 && <div style={{ flexGrow: '1', borderBottom: '1px solid blue', height: '1px' }} />}
@@ -67,7 +54,6 @@ const Main = () => {
             {/* Content */}
             <h3>{steps[currentStep]}</h3>
             <Stepper currentStep={currentStep} />
-
             {/* Buttons */}
             <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'space-between' }}>
                 {currentStep > 0 ? (

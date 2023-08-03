@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Card, Button, Dropdown } from "react-bootstrap";
-import { FaChevronDown } from "react-icons/fa"; // Importing dropdown arrow icon
+
+import { FaChevronDown } from "react-icons/fa";
 
 const TypeCard = ({ id, icon, name, systemType, version = [] }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -15,7 +16,7 @@ const TypeCard = ({ id, icon, name, systemType, version = [] }) => {
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: "white",
-          border: isHovered ? "1px solid blue" : "none",
+          border: isHovered ? "4px solid blue" : "none",
           height: "200px",
           width: "250px",
           paddingTop: "50px",

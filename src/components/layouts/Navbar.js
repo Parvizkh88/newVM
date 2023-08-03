@@ -1,7 +1,10 @@
 import React from 'react';
+
 import { FiBell } from "react-icons/fi";
 import { AiOutlineDown } from "react-icons/ai";
+
 import logo from "../../assets/images/AbrnocLogo.JPG"
+import user from "../../assets/images/user.jpg"
 
 const Navbar = () => {
     return (
@@ -11,7 +14,7 @@ const Navbar = () => {
             </div>
             <div style={{ width: '85%', display: 'flex', justifyContent: 'flex-end', paddingRight: '10px' }}>
                 <FiBell size={24} />
-                <img src="skype.jpg" alt="profile" style={{ borderRadius: '50%', height: '40px', margin: '0 10px' }} />
+                <img src={user} alt="user" style={{ width: '30px', height: '30px', margin: '0 20px', borderRadius: '15%' }} />
                 <span>User</span>
                 <AiOutlineDown size={24} style={{ marginLeft: '10px' }} />
             </div>

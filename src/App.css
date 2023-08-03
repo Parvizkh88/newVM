@@ -23,9 +23,11 @@ button:hover {
   border: none;
 }
 .Main-button {
-  background-color: yellow;
-  color: black;
+  background-color: #f1c93b;
+  color: #213555;
   transition: all 0.5s ease;
+  border: none;
+  font-weight: 500;
 }
 
 .Main-button:hover {

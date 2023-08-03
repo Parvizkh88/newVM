@@ -1,5 +1,6 @@
 import React from 'react';
-import { AiOutlineHome, AiOutlineCloud, AiOutlineCamera, AiOutlinePlusSquare, AiOutlineKey, AiOutlineHdd, AiOutlineWifi, AiOutlineFileText, AiOutlineDollarCircle, AiOutlineCustomerService, AiOutlineQuestionCircle } from 'react-icons/ai';
+
+import { AiOutlineHome, AiOutlineCamera, AiOutlinePlusSquare, AiOutlineWifi, AiOutlineFileText, AiOutlineDollarCircle, AiOutlineQuestionCircle } from 'react-icons/ai';
 import { MdOutlineKey } from "react-icons/md";
 import { FiHardDrive } from "react-icons/fi";
 import { IoHelpBuoyOutline } from "react-icons/io5";

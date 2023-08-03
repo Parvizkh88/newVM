@@ -1,4 +1,5 @@
 import React from "react";
+
 import LocationCard from "./LocationCard";
 
 const Locations = ({ dataList }) => {
