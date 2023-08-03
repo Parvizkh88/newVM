@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Card, Button, DropdownButton, Dropdown } from "react-bootstrap";
+import { Card, Button, Dropdown } from "react-bootstrap";
 import { FaChevronDown } from "react-icons/fa"; // Importing dropdown arrow icon
 
 const TypeCard = ({ id, icon, name, systemType, version = [] }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [selectedVersion, setSelectedVersion] = useState("Select version");
+  const [showDropdown, setShowDropdown] = useState(false);
 
   return (
     <div id={id}>
@@ -14,13 +16,25 @@ const TypeCard = ({ id, icon, name, systemType, version = [] }) => {
           alignItems: "center",
           backgroundColor: "white",
           border: isHovered ? "1px solid blue" : "none",
+          height: "200px",
+          width: "250px",
+          paddingTop: "50px",
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <Card.Img variant="top" src={icon} />
+        <Card.Img
+          variant="top"
+          src={icon}
+          style={{
+            height: "50px",
+            width: "50px",
+          }}
+        />
         <Card.Body>
-          <Card.Title style={{ fontWeight: "bold" }}>{name}</Card.Title>
+          <Card.Title style={{ fontWeight: "bold", marginLeft: "40px" }}>
+            {name}
+          </Card.Title>
           <div
             style={{
               display: "flex",
@@ -31,35 +45,33 @@ const TypeCard = ({ id, icon, name, systemType, version = [] }) => {
             <span style={{ fontWeight: "bold" }}>{systemType}</span>
             <span style={{ color: "lightgray" }}>System Type</span>
           </div>
-          <DropdownButton
+          <Button
             style={{
               width: "150px",
               backgroundColor: "white",
               borderColor: isHovered ? "blue" : "lightgray",
-              color: isHovered ? "blue" : "lightgray",
+              color: "black",
             }}
-            id="dropdown-basic-button"
-            title="Select version"
+            onClick={() => setShowDropdown(!showDropdown)}
           >
-            {version.map((item) => (
-              <Dropdown.Item href="#/action-1">{item}</Dropdown.Item>
-            ))}
-          </DropdownButton>
-          {/* <Button
-            style={{
-              width: "150px",
-              backgroundColor: "white",
-              borderColor: isHovered ? "blue" : "lightgray",
-              color: isHovered ? "blue" : "lightgray",
-            }}
-          >
-            {isHovered ? (
-              <span style={{ color: "black" }}>20.04</span>
-            ) : (
-              <span>Select version</span>
-            )}
+            <span>{selectedVersion}</span>
             <FaChevronDown color={isHovered ? "blue" : "lightgray"} />
-          </Button> */}
+          </Button>
+          {showDropdown && (
+            <Dropdown.Menu show>
+              {version.map((item) => (
+                <Dropdown.Item
+                  href="#/action-1"
+                  onClick={() => {
+                    setSelectedVersion(item);
+                    setShowDropdown(false);
+                  }}
+                >
+                  {item}
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          )}
         </Card.Body>
       </Card>
     </div>
